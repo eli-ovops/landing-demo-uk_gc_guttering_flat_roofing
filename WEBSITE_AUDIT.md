@@ -1,0 +1,22 @@
+# Website Audit — read-only current-state review
+
+**URL reviewed:** https://gcgutteringandflatroofing.co.uk/  
+**Review date:** 2026-08-23  
+**Method:** Real browser, CSS viewport overrides 1440×900 and 390×844; no form submission, login or page change. The saved PNG has a smaller content area due to browser scrollbar capture; see Source Ledger for dimensions and hashes.
+
+## Findings ordered by visitor impact
+
+| Severity | Reproducible observation | Visitor impact | Evidence | Static one-page remedy |
+|---|---|---|---|---|
+| P0 | At 390px CSS width, `document.documentElement.scrollWidth` was **408px** while `innerWidth` was **390px**. The footer/container and testimonial carousel were among elements exceeding the viewport. | Horizontal overflow compromises mobile reading and makes the contact experience less reliable. | Mobile browser run; `evidence/gc_guttering_home_390x844_2026-08-23.png`. | Ensure all sections fit the 390px viewport and test no horizontal overflow. |
+| P0 | At both tested first views, the primary phone display is text with an empty anchor href; the public email is not present in the first view. The visible mobile hero offers no clear direct call/email action. | A visitor cannot immediately choose a clearly labelled contact route at the primary decision point. This is an observed presentation issue, not a claim about lost leads. | Desktop/mobile screenshot; official contact page for verified contact details. | Use a labelled `tel:` button and a labelled `mailto:` link in Hero and final CTA. |
+| P1 | The hero says only “Guttering and Flat Roofing / Hampshire and Dorset”; the service breadth and repair/EPDM/fascia distinctions appear later. | Visitors must scroll or use navigation before knowing whether their task fits. | Desktop/mobile screenshot; Services content visible through the site navigation. | Lead with 2–3 evidence-bound service groups under the hero. |
+| P1 | Service information is a long mixed list, including gutters, doors/windows, chimney work and painting, rather than task-oriented groupings. | The current presentation makes it harder to quickly scan priority services. | https://gcgutteringandflatroofing.co.uk/services/ (also displayed by home-page Services navigation). | Select three core evidence-bound groups; retain remaining services for final delivery only after owner confirmation. |
+| P1 | Several gallery thumbnails expose camera-style filenames such as `20220517 144434` as alt/visible labels; reviewed asset URLs include dated 2022 filenames. | Gallery presentation provides little service context and adds a dated/technical impression. This is a content-labelling observation, not a claim the work is old. | Homepage browser DOM and screenshot. | Use short descriptive captions only if customer-authorized assets and facts support them; otherwise omit gallery from a concept. |
+| P1 | The primary interaction on the existing site is a server-side Contact Form 7 form. | A future static offer must not falsely recreate a contact/quote system. | Home/contact browser DOM shows Contact Form 7 fields and POST form action. | Replace future concept interaction with telephone and email links only. |
+| P2 | Trust indicators are visually present near the header, while the user cannot see the underlying scope of “20 year Guarantee” or badge basis in the first view. | Badges can be read as broader assurances than research has verified. | Official home; Herald advert; Checkatrade profile. | Do not carry guarantee/badge claims into concept content without terms/certification confirmation. A neutral outbound Checkatrade link is safer. |
+| P2 | The contact and service navigation are present, but clicking Services in this browser displayed the section while retaining the home URL; a direct-route navigation behaved inconsistently in one attempt. | This is insufficient evidence to call the live link broken, but it does not provide a clean, independently confirmed task URL in this review. | Browser session record; home link’s observed href was `/services/`. | A one-page concept can use named anchor sections with tested, accessible links. |
+
+## Scope-safe conclusion
+
+This audit shows a meaningful static presentation opportunity. It does **not** prove SEO loss, conversion loss, technical insecurity, poor service quality, or customer intent to purchase. Browser review is evidence of the observed current presentation only.
